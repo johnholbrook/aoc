@@ -74,5 +74,21 @@ module.exports = {
      */
     copy: function(thing){
         return JSON.parse(JSON.stringify(thing))
+    },
+
+    /**
+     * converts a word representing a digit to the digit itself
+     * @param {string} s 
+     */
+    word2digit: function(s){
+        return s.replace("one", "1")
+                .replace("two", "2")
+                .replace("three", "3")
+                .replace("four", "4")
+                .replace("five", "5")
+                .replace("six", "6")
+                .replace("seven", "7")
+                .replace("eight", "8")
+                .replace("nine", "9")
     }
 }
