@@ -90,5 +90,24 @@ module.exports = {
                 .replace("seven", "7")
                 .replace("eight", "8")
                 .replace("nine", "9")
+    },
+
+    /**
+     * Generates a range of numbers from a to b, including a but excluding b
+     * @param {Number} a 
+     * @param {Number} b 
+     * @returns Number[]
+     */
+    range: function(a, b){
+        return [...Array(b-a).keys()].map(v => v+a);
+    },
+
+    /**
+     * Returns true if arrays a and b share any elements in common
+     * @param {any[]} a 
+     * @param {any[]} b 
+     */
+    overlap: function(a, b){
+        return (a.filter(v => b.includes(v))).length > 0;
     }
 }
