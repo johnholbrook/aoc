@@ -109,5 +109,19 @@ module.exports = {
      */
     overlap: function(a, b){
         return (a.filter(v => b.includes(v))).length > 0;
+    },
+
+    /**
+     * Returns all matches of the given RegExp in the given string
+     * @param {String} s 
+     * @param {RegExp} re 
+     * @returns 
+     */
+    multi_match: function(s, re) {
+        let result = [];
+        while ((match = re.exec(s)) != null) {
+            result.push(match);
+        }
+        return result;
     }
 }
