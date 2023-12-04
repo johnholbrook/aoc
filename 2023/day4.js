@@ -23,7 +23,6 @@ for (let i=0; i<input.length; i++){
     for (let i2=i+1; i2<=i+matches; i2++){
         card_counts[i2] += card_counts[i];
     }
-    // console.log(card_counts);
 }
 let part2 = utils.sum_list(card_counts);
 console.log("Part 2:", part2);
