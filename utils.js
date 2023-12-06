@@ -123,5 +123,20 @@ module.exports = {
             result.push(match);
         }
         return result;
+    },
+
+    /**
+     * Returns a list of all the numbers in the given string
+     * @param {String} s 
+     * @returns Number[]
+     */
+    get_numbers: function(s){
+        const re = /\d+/g;
+        let result = [];
+        while ((match = re.exec(s)) != null) {
+            result.push(match);
+        }
+        return result.map(m => Number(m[0]));
     }
+    
 }
