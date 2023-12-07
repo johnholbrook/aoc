@@ -137,6 +137,21 @@ module.exports = {
             result.push(match);
         }
         return result.map(m => Number(m[0]));
-    }
+    },
     
+    /**
+     * Count the number of occurences of each character in the given string
+     * https://stackoverflow.com/questions/72948251/find-unique-characters-in-a-string-and-the-count-of-their-occurrences
+     * @param {String} text 
+     * @returns Object
+     */
+    count_occurrences: function(text = "") {
+        const array_from_text = text.split("");
+        const result = {};
+        Array.from(new Set(array_from_text)).forEach(word => {
+            const { length } = array_from_text.filter(w => w === word);
+            result[word] = length;
+        });
+        return result;
+    }
 }
