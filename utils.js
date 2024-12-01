@@ -1,4 +1,21 @@
+const fs = require('node:fs');
+
 module.exports = {
+    /**
+     * Opens the file at the specified path.
+     * @param {String} path 
+     * @returns File contents or -1 if error
+     */
+    read_file: function(path){        
+        try {
+            let data = fs.readFileSync(path, 'utf8');
+            return data;
+        } catch (err) {
+            console.error(err);
+            return -1;
+        }
+    },
+    
     /**
      * Return the sum of all numbers in the given array
      * @param {Number[]} list 
@@ -151,6 +168,20 @@ module.exports = {
         Array.from(new Set(array_from_text)).forEach(word => {
             const { length } = array_from_text.filter(w => w === word);
             result[word] = length;
+        });
+        return result;
+    },
+
+    /**
+     * Counts how many times the given target value appears in the given array.
+     * @param {Array} array 
+     * @param {any} target 
+     * @returns Number
+     */
+    count_occurrences_in_array: function(array, target){
+        let result = 0;
+        array.forEach(v => {
+            if (v == target) result += 1;
         });
         return result;
     }
