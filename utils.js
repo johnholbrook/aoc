@@ -86,6 +86,15 @@ module.exports = {
     },
 
     /**
+     * Transpose a 2D array
+     * @param {any[]} array 
+     * @returns any[]
+     */
+    transpose: function(array) {
+        return array[0].map((col, i) => array.map(row => row[i]));
+    },
+
+    /**
      * Return a copy of the given object or array
      * @param {any} thing
      */
@@ -135,6 +144,7 @@ module.exports = {
      * @returns 
      */
     multi_match: function(s, re) {
+        re = new RegExp(re, "g");
         let result = [];
         while ((match = re.exec(s)) != null) {
             result.push(match);
