@@ -58,14 +58,8 @@ console.log("Part 1:", part1)
 
 // given the location of an A, check if it's the middle of two MAS in an x shape
 function is_mas_x(arr, i, j){
-    // console.log(i, j)
     try{
         let [tl, tr, bl, br] = [arr[i-1][j-1], arr[i-1][j+1], arr[i+1][j-1], arr[i+1][j+1]];
-        // console.log(tl, tr, bl, br);
-        // let d1 = ((tl == "M" && br == "S") || (tl == "S" && br == "M"));
-        // let d2 = ((tr == "M" && bl == "S") || (tr == "S" && bl == "M"));
-        // console.log(d1, d2);
-        // if (d1 && d2) return true;
         if (
             ((tl == "M" && br == "S") || (tl == "S" && br == "M")) &&
             ((tr == "M" && bl == "S") || (tr == "S" && bl == "M"))
