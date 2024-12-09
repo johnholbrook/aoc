@@ -194,5 +194,15 @@ module.exports = {
             if (v == target) result += 1;
         });
         return result;
+    },
+
+    /**
+     * Compute greatest common divisor
+     * @param {Number} a 
+     * @param {Number} b 
+     * @returns Number
+     */
+    gcd: function(a, b) { 
+        return (!b) ? a : this.gcd(b,a%b); 
     }
 }
