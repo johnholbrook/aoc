@@ -1,11 +1,10 @@
 const utils = require("../utils.js");
 
-let input = utils.get_numbers(utils.read_file("day11.in").split("\n"));
+let input = utils.get_numbers(utils.read_file("day11.in"));
 
 let map = input.reduce((t,v) => {
-    let result = {};
-    result[v] = 1;
-    return Object.assign(result, t);
+    t[v] = 1;
+    return t;
 }, {});
 
 function step_stone(n){
@@ -20,12 +19,11 @@ function step_stone(n){
 function step_list(l){
     return Object.keys(l).reduce((t, v) => {
         let children = step_stone(v);
-        let result = utils.copy(t);
         children.forEach(c => {
-            if (Object.hasOwn(result, c)) result[c] += l[v]
-            else result[c] = l[v]
+            if (Object.hasOwn(t, c)) t[c] += l[v]
+            else t[c] = l[v]
         });
-        return result;
+        return t;
     }, {});
 }
 
