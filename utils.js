@@ -85,6 +85,14 @@ module.exports = {
         return result;
     },
 
+    forEach2d: function(a, callback){
+        a.forEach((row, i) => {
+            row.forEach((cell, j) => {
+                callback(cell, i, j, row, a);
+            });
+        });
+    },
+
     /**
      * Transpose a 2D array
      * @param {any[]} array 
