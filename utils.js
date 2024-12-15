@@ -85,6 +85,11 @@ module.exports = {
         return result;
     },
 
+    /**
+     * Iterate over a 2d array, calling a provided function for each location
+     * @param {any[][]} a - 2d array to iterate over
+     * @param {(value: any, rowIndex: number, colIndex: number, row: any[], array: any[][]) => void} callback  - callback to execute
+     */
     forEach2d: function(a, callback){
         a.forEach((row, i) => {
             row.forEach((cell, j) => {
