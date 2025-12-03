@@ -18,4 +18,4 @@ let part1 = utils.sum_list(banks.map(b => find_largest_sequence(b, 2)));
 console.log("Part 1:", part1);
 
 let part2 = utils.sum_list(banks.map(b => find_largest_sequence(b, 12)));
-console.log("Part 1:", part2);
+console.log("Part 2:", part2);
