@@ -100,8 +100,8 @@ module.exports = {
 
     /**
      * Transpose a 2D array
-     * @param {any[]} array 
-     * @returns any[]
+     * @param {any[][]} array 
+     * @returns any[][]
      */
     transpose: function(array) {
         return array[0].map((col, i) => array.map(row => row[i]));
