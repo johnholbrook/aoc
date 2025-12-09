@@ -15,7 +15,7 @@ function connect(id1, id2){
     // find the two points
     let p1 = input.find(p => p.id == id1);
     let p2 = input.find(p => p.id == id2);
-    // whichever circuit ID is lower will survive
+    // lower circuit ID will survive
     let [c_new, c_old] = [p1.c, p2.c].sort()
     for (let q=0; q<input.length; q++){
         if (input[q].c == c_old) input[q].c = c_new
@@ -29,7 +29,7 @@ function unique_circuits(points){
     return Array.from(s);
 }
 
-// calculate the distances between every pair of points and sort them from shortest to longest
+// calculate the dists between every pair of points and sort them from shortest to longest
 let distances = [];
 input.forEach((p1, i) => {
     input.slice(i+1).forEach(p2 => {
@@ -38,7 +38,7 @@ input.forEach((p1, i) => {
 });
 distances.sort((a,b) => a.dist - b.dist);
 
-// make the first 1000 connections
+// make the first 1000 conns
 distances.slice(0,part1_connections).forEach(d => {
     connect(d.points[0].id, d.points[1].id);
 });
@@ -55,7 +55,7 @@ let circuit_counts = unique_circuits(input).map(c => {
 let part1 = utils.mult_list(circuit_counts.slice(0, 3).map(c => c.count));
 console.log("Part 1:", part1);
 
-// continue making connections until all boxes are in one circuit
+// continue making conns until all boxes are in one circuit
 let i = part1_connections;
 while (true){
     let [a,b] = distances[i].points;

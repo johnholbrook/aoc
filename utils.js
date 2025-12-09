@@ -26,6 +26,15 @@ module.exports = {
     },
 
     /**
+     * Return the product of all numbers in the given array
+     * @param {Number[]} list
+     * @returns product of numbers in the array
+     */
+    mult_list: function(list){
+        return list.reduce((t,v) => t*v, 1);
+    },
+
+    /**
      * Given a 2D array of items, and a location on the array, return the adjacent items (not including diagonals)
      * @param {any[][]} grid 
      * @param {Number} row 
